@@ -2,15 +2,16 @@ require 'station'
 
 describe Station do
 
-  let(:station) { double(:name => "name", :zone => 1) }
+  subject { described_class.new(:name => "name", :zone => 1) }
 
   context "station information" do
     it "has a name" do
-      expect(station.name).to eq "name"
+      expect(subject.name).to eq("name")
     end
 
     it "has a zone" do
-      expect(station.zone).to eq 1
+      expect(subject.zone).to eq(1)
     end
   end
+
 end

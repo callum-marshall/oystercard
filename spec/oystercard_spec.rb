@@ -61,7 +61,6 @@ describe Oystercard do
     it "resets entry station to nil" do
       expect(card.entry_station).to eq nil
     end
-
   end
 
   context '#journey_list' do
@@ -74,7 +73,6 @@ describe Oystercard do
       card.touch_out("Monument")
       expect(card.journey_list).to eq [{in: "Aldgate", out:"Monument"}]
     end
-
   end
 
 end

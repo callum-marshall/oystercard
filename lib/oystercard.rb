@@ -9,7 +9,6 @@ class Oystercard
   attr_reader :balance, :entry_station, :exit_station, :journey_list
 
   def top_up(amount)
-
     @balance += amount
     raise "Maximum balance of #{MAX_BALANCE} exceeded" if @balance > MAX_BALANCE
 
