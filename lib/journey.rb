@@ -1,19 +1,33 @@
 class Journey
 
-# rough outline
+  def initialize
+    @entry_station
+    @exit_station
+  end
 
-def initialize
-  @entry_station
-  @exit_station
-  @in_journey = false
+  attr_reader :in_journey, :entry_station, :exit_station
+
+  def start(station)
+    @entry_station = station
+  end
+
+  def finish(station)
+    @exit_station = station
+  end
+
+  def complete?
+    @exit_station != nil
+  end
+
+  def fare
+    complete? ? MIN_FARE : PENALTY_FARE
+  end
+
+MIN_FARE = 1
+PENALTY_FARE = 6
+
 end
 
-attr_reader :in_journey, :entry_station, :exit_station
-
-def in_journey?
-  @entry_station ? true : false
-end
-
-# needs to indentify incomplete journeys
-
-end
+# def in_journey?
+#   @journey[:entry] != nil && @journey[:exit] == nil
+# end
